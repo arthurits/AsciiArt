@@ -25,3 +25,9 @@ See [releases](https://github.com/microsoft/TemplateStudio/releases) and [milest
 ## Feedback
 
 Bugs and feature requests should be filed at https://aka.ms/templatestudio.
+
+## Links
+
+Based on the following ideas:
+https://www.devleader.ca/2023/08/25/generate-ascii-art-a-simple-how-to-in-c/
+https://www.codeproject.com/Articles/5367237/Generate-ASCII-Art-A-Simple-How-To-in-Csharp
