@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "AsciiArt (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "AsciiArt (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
