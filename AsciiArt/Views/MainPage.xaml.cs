@@ -22,6 +22,9 @@ public sealed partial class MainPage : Page
         
     }
 
+    // See code references here
+    // https://learn.microsoft.com/en-us/windows/apps/design/input/drag-and-drop
+    // https://stackoverflow.com/questions/77298989/how-to-drag-and-drop-external-files-into-winui3-apps
     private void Grid_DragOver(object sender, DragEventArgs e)
     {
         e.AcceptedOperation = DataPackageOperation.Copy;
