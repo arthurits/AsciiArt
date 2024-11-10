@@ -7,6 +7,19 @@
     mc:Ignorable="d">
 
     <Grid x:Name="ContentArea">
-        
+        <ScrollView x:Name="ScrollViewPage" ContentOrientation="Vertical"
+                    HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                    ZoomMode="Disabled" IsTabStop="True"
+                    VerticalAlignment="Top" HorizontalAlignment="Left"
+                    HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+
+            <StackPanel Orientation="Vertical" Style="{StaticResource BaseStackPanel}">
+                <Grid AllowDrop="True" DragOver="Grid_DragOver" Drop="Grid_Drop" Background="LightBlue" Margin="10,10,10,353">
+                    <TextBlock>Drop anywhere in the blue area</TextBlock>
+                </Grid>
+                <Image x:Name="Image" CanDrag="True" Margin="10,292,10,0" Height="338"></Image>
+            </StackPanel>
+        </ScrollView>
     </Grid>
 </Page>
