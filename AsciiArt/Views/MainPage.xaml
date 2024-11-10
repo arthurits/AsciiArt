@@ -14,7 +14,7 @@
                     HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto"
                     VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
 
-            <StackPanel Orientation="Vertical" Style="{StaticResource BaseStackPanel}">
+            <StackPanel Orientation="Vertical">
                 <Grid AllowDrop="True" DragOver="Grid_DragOver" Drop="Grid_Drop" Background="LightBlue" Margin="10,10,10,353">
                     <TextBlock>Drop anywhere in the blue area</TextBlock>
                 </Grid>
