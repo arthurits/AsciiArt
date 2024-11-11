@@ -4,7 +4,6 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
-using Microsoft.UI.Xaml.Controls;
 
 namespace AsciiArt.Views;
 
@@ -17,7 +16,7 @@ public sealed partial class MainPage : Page
 
     public MainPage()
     {
-        InitializeComponent();
+        this.InitializeComponent();
         ViewModel = App.GetService<MainViewModel>();
         
     }
@@ -40,8 +39,13 @@ public sealed partial class MainPage : Page
                 var storageFile = items[0] as StorageFile;
                 var bitmapImage = new BitmapImage();
                 bitmapImage.SetSource(await storageFile.OpenAsync(FileAccessMode.Read));
+                
                 // Set the image on the main page to the dropped image
-                Image.Source = bitmapImage;
+                this.ImageOriginal.Source = bitmapImage;
+                
+                // Make the UI visible
+                this.OriginalImage.Visibility = Visibility.Visible;
+                this.AsciiImage.Visibility = Visibility.Visible;
             }
         }
     }

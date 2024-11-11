@@ -4,9 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="using:System"
+    xmlns:local="using:AsciiArt.Views"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
+    <Grid x:Name="ContentArea" ColumnDefinitions="*">
         <ScrollView x:Name="ScrollViewPage" ContentOrientation="Vertical"
                     HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
                     ZoomMode="Disabled" IsTabStop="True"
@@ -15,10 +17,26 @@
                     VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
 
             <StackPanel Orientation="Vertical">
-                <Grid AllowDrop="True" DragOver="Grid_DragOver" Drop="Grid_Drop" Background="LightBlue" Margin="10,10,10,353">
-                    <TextBlock>Drop anywhere in the blue area</TextBlock>
-                </Grid>
-                <Image x:Name="Image" CanDrag="True" Margin="10,292,10,0" Height="338"></Image>
+                <Border BorderBrush="Gray"
+                        Background="LightBlue"
+                        CornerRadius="8"
+                        Height="80"
+                        Width="150"
+                        AllowDrop="True"
+                        DragOver="Grid_DragOver"
+                        Drop="Grid_Drop">
+                    <!--<Grid  Background="LightBlue" Margin="10,10,10,10">-->
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Drop in the blue area</TextBlock>
+                    <!--</Grid>-->
+                </Border>
+                <StackPanel x:Name="OriginalImage"  Orientation="Vertical" Visibility="Collapsed">
+                    <TextBlock>Original image</TextBlock>
+                    <Image x:Name="ImageOriginal" CanDrag="True" Margin="10,10,10,10" Height="338"></Image>
+                </StackPanel>
+                <StackPanel x:Name="AsciiImage"  Orientation="Vertical" Visibility="Collapsed">
+                    <TextBlock>Converted image</TextBlock>
+                    <Image x:Name="ImageAscii" CanDrag="True" Margin="10,10,10,0" Height="338"></Image>
+                </StackPanel>
             </StackPanel>
         </ScrollView>
     </Grid>
