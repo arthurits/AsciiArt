@@ -23,7 +23,7 @@
                         Height="80"
                         Width="150"
                         AllowDrop="True"
-                        DragOver="Grid_DragOver"
+                        DragOver="Grid_DragOverCustomized"
                         Drop="Grid_Drop">
                     <!--<Grid  Background="LightBlue" Margin="10,10,10,10">-->
                     <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">Drop in the blue area</TextBlock>

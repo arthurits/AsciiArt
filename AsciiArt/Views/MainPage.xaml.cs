@@ -38,7 +38,7 @@ public sealed partial class MainPage : Page
             {
                 var storageFile = items[0] as StorageFile;
                 var bitmapImage = new BitmapImage();
-                bitmapImage.SetSource(await storageFile.OpenAsync(FileAccessMode.Read));
+                bitmapImage.SetSource(await storageFile?.OpenAsync(FileAccessMode.Read));
                 
                 // Set the image on the main page to the dropped image
                 this.ImageOriginal.Source = bitmapImage;
@@ -48,5 +48,21 @@ public sealed partial class MainPage : Page
                 this.AsciiImage.Visibility = Visibility.Visible;
             }
         }
+    }
+
+    private void Grid_DragOverCustomized(object sender, DragEventArgs e)
+    {
+        e.AcceptedOperation = DataPackageOperation.Copy;
+
+        // Sets custom UI text
+        e.DragUIOverride.Caption = "Custom text here";
+        
+        // Sets a custom glyph
+        e.DragUIOverride.SetContentFromBitmapImage(
+            new BitmapImage(
+                new Uri("ms-appx:///Assets/CustomImage.png", UriKind.RelativeOrAbsolute)));
+        e.DragUIOverride.IsCaptionVisible = true; // Sets if the caption is visible
+        e.DragUIOverride.IsContentVisible = true; // Sets if the dragged content is visible
+        e.DragUIOverride.IsGlyphVisible = true; // Sets if the glyph is visibile
     }
 }
