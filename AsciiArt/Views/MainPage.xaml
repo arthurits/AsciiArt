@@ -10,9 +10,9 @@
 
     <Grid x:Name="ContentArea" ColumnDefinitions="*">
         <ScrollView x:Name="ScrollViewPage" ContentOrientation="Vertical"
-                    HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                    HorizontalContentAlignment="Stretch"  VerticalContentAlignment="Stretch"
                     ZoomMode="Disabled" IsTabStop="True"
-                    VerticalAlignment="Top" HorizontalAlignment="Left"
+                    VerticalAlignment="Top" HorizontalAlignment="Stretch"
                     HorizontalScrollMode="Auto" HorizontalScrollBarVisibility="Auto"
                     VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
 
@@ -21,7 +21,7 @@
                         Background="LightBlue"
                         CornerRadius="8"
                         Height="80"
-                        Width="150"
+                        Width="250"
                         AllowDrop="True"
                         DragOver="Grid_DragOverCustomized"
                         Drop="Grid_Drop">
